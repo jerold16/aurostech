@@ -1,0 +1,81 @@
+<svg width="128" height="128" viewBox="0 0 105 88" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="favLeftGrad" x1="18" y1="78" x2="54" y2="12" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stopColor="#00E5FF" />
+      <stop offset="25%" stopColor="#00A3FF" />
+      <stop offset="65%" stopColor="#0066FF" />
+      <stop offset="100%" stopColor="#1D4ED8" />
+    </linearGradient>
+
+    <linearGradient id="favLeftFold" x1="16" y1="82" x2="36" y2="62" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stopColor="#003D82" />
+      <stop offset="50%" stopColor="#002759" />
+      <stop offset="100%" stopColor="#001433" />
+    </linearGradient>
+
+    <linearGradient id="favRightGrad" x1="52" y1="12" x2="88" y2="80" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stopColor="#1E40AF" />
+      <stop offset="25%" stopColor="#2563EB" />
+      <stop offset="55%" stopColor="#6366F1" />
+      <stop offset="80%" stopColor="#8B5CF6" />
+      <stop offset="95%" stopColor="#9333EA" />
+      <stop offset="100%" stopColor="#A855F7" />
+    </linearGradient>
+
+    <linearGradient id="favSwoosh" x1="24" y1="68" x2="92" y2="20" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stopColor="#00F0FF" />
+      <stop offset="35%" stopColor="#00A3FF" />
+      <stop offset="70%" stopColor="#3B82F6" />
+      <stop offset="100%" stopColor="#8B5CF6" />
+    </linearGradient>
+
+    <radialGradient id="favOrb" cx="35%" cy="35%" r="65%">
+      <stop offset="0%" stopColor="#67E8F9" />
+      <stop offset="28%" stopColor="#00C2FF" />
+      <stop offset="65%" stopColor="#0052D4" />
+      <stop offset="100%" stopColor="#0A1E3F" />
+    </radialGradient>
+
+    <linearGradient id="favSpecular" x1="30" y1="60" x2="85" y2="25" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stopColor="#FFFFFF" stopOpacity="0.9" />
+      <stop offset="100%" stopColor="#BAE6FD" stopOpacity="0.3" />
+    </linearGradient>
+  </defs>
+
+  <path
+    d="M 18 74 C 16 77, 19 82, 26 82 L 38 82 L 35 68 L 23 70 Z"
+    fill="url(#favLeftFold)"
+  />
+
+  <path
+    d="M 18 74 C 18 66, 26 48, 38 30 L 50 12 C 52 9.5, 55 9.5, 57 12 L 48 30 L 37 50 L 29 66 C 25 72, 20 74, 18 74 Z"
+    fill="url(#favLeftGrad)"
+  />
+
+  <path
+    d="M 50 12 C 53 9.5, 56 9.5, 58 12 L 55 18 L 48 30 Z"
+    fill="#BAE6FD"
+    opacity="0.8"
+  />
+
+  <path
+    d="M 56 12 C 58 9.5, 61 10.5, 62.5 13 L 88 68 C 89.5 71.5, 88 76, 83.5 76 L 70.5 76 L 53.5 42 L 48 30 L 56 12 Z"
+    fill="url(#favRightGrad)"
+  />
+
+  <path
+    d="M 23 66 C 36 62, 51 54, 66 43 C 77 34, 85 26, 92 19.5 C 88 24, 78 34, 64 44 C 49 54, 34 62, 23 66 Z"
+    fill="url(#favSwoosh)"
+  />
+
+  <path
+    d="M 28 64 C 43 58, 60 48, 91 20"
+    stroke="url(#favSpecular)"
+    strokeWidth="1.3"
+    strokeLinecap="round"
+    opacity="0.9"
+  />
+
+  <circle cx="92.5" cy="19" r="5.2" fill="url(#favOrb)" />
+  <circle cx="91" cy="17.5" r="1.3" fill="#FFFFFF" opacity="0.95" />
+</svg>

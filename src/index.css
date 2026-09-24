@@ -1,0 +1,65 @@
+@import "tailwindcss";
+
+:root {
+  --brand-blue-500: #007BFF;
+  --brand-blue-600: #0064D6;
+
+  --brand-purple-500: #8B5CF6;
+  --brand-purple-600: #7C3AED;
+
+  --brand-slate-900: #0F172A;
+  --brand-cyan-500: #06B6D4;
+  --brand-slate-100: #F1F5F9;
+
+  --surface-white: #FFFFFF;
+  --surface-light: #F8FAFC;
+  --surface-subtle: #F1F5F9;
+
+  --text-primary: #0F172A;
+  --text-secondary: #475569;
+  --text-muted: #64748B;
+  --text-on-dark: #FFFFFF;
+
+  --border-subtle: #E2E8F0;
+
+  --success: #10B981;
+  --warning: #F59E0B;
+  --error: #EF4444;
+}
+
+/* Custom glow and gradient classes */
+.brand-gradient {
+  background: linear-gradient(135deg, #007BFF 0%, #8B5CF6 100%);
+}
+
+.brand-gradient-hover:hover {
+  background: linear-gradient(135deg, #0064D6 0%, #7C3AED 100%);
+}
+
+.brand-gradient-cyan {
+  background: linear-gradient(135deg, #06B6D4 0%, #007BFF 50%, #8B5CF6 100%);
+}
+
+.brand-glow {
+  box-shadow: 0 4px 20px -2px rgba(0, 123, 255, 0.25);
+}
+
+.brand-glow-purple {
+  box-shadow: 0 4px 20px -2px rgba(139, 92, 246, 0.25);
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #F1F5F9;
+}
+::-webkit-scrollbar-thumb {
+  background: #CBD5E1;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #007BFF;
+}
