@@ -2,6 +2,10 @@ import tailwindcss from '@tailwindcss/vite';
 import react from '@vitejs/plugin-react';
 import path from 'path';
 import {defineConfig, Plugin} from 'vite';
+import dotenv from 'dotenv';
+
+// Load .env so process.env is available in the API dev server middleware
+dotenv.config();
 
 function apiDevServerPlugin(): Plugin {
   return {
