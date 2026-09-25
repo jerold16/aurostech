@@ -60,7 +60,7 @@ export default async function handler(req: any, res: any) {
       from: "AureosTech Enquiries <onboarding@resend.dev>",
       to: [TO_EMAIL!],
       ...replyToField,
-      subject: `New Enquiry from ${safeName}${safeEmail ? ` — ${safeEmail}` : ` — ${safePhone}`}`,
+      subject: `New Enquiry from ${safeName}${safeEmail ? ` — ${safeEmail}` : ` — ${safePhone}`} [${formattedDate} IST]`,
       html: `
         <!DOCTYPE html>
         <html>

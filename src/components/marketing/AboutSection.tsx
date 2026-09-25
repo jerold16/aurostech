@@ -211,59 +211,57 @@ export const AboutSection: React.FC<AboutSectionProps> = ({ onLearnMore }) => {
           </div>
         </div>
 
-        {/* Our Leadership Team Section from design reference (Page 2: About Us Page) */}
-        <div>
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5 }}
-            className="text-center max-w-2xl mx-auto mb-12"
-          >
-            <span className="text-xs font-bold text-[#007BFF] uppercase tracking-widest">
-              EXECUTIVE GUIDANCE
-            </span>
-            <h3 className="text-2xl sm:text-3xl font-extrabold text-[#0F172A] mt-1">
-              Our Leadership
-            </h3>
-            <p className="text-sm text-slate-600 mt-2">
-              Seasoned software architects, operations directors, and industry pioneers driving Aureostech.
-            </p>
-          </motion.div>
+        {/* Founder Section — Editorial Style */}
+        {(() => {
+          const ceo = LEADERSHIP_TEAM[0];
+          return (
+            <motion.div
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.7, ease: [0.21, 0.47, 0.32, 0.98] }}
+              className="relative rounded-3xl overflow-hidden bg-gradient-to-br from-[#0B192C] via-[#0F2440] to-[#0B192C] p-8 sm:p-12 lg:p-16"
+            >
+              {/* Ambient glow */}
+              <div className="absolute top-0 right-0 w-80 h-80 bg-[#007BFF]/15 rounded-full blur-[120px] pointer-events-none" />
+              <div className="absolute bottom-0 left-0 w-64 h-64 bg-[#06B6D4]/10 rounded-full blur-[100px] pointer-events-none" />
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {LEADERSHIP_TEAM.map((leader, idx) => (
-              <motion.div
-                key={idx}
-                initial={{ opacity: 0, y: 40 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.55, delay: idx * 0.1, ease: [0.21, 0.47, 0.32, 0.98] }}
-                className="group p-5 rounded-2xl bg-white border border-slate-200 shadow-xs hover:border-[#007BFF]/60 hover:shadow-lg transition-all text-center flex flex-col items-center"
-              >
-                {/* Portrait Avatar */}
-                <div className="w-24 h-24 rounded-full overflow-hidden mb-4 border-2 border-slate-200 group-hover:border-[#007BFF] transition-colors relative shadow-sm">
-                  <img
-                    src={leader.avatar}
-                    alt={leader.name}
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                    referrerPolicy="no-referrer"
-                  />
+              <div className="relative grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-center">
+                {/* Left: Avatar + Name block */}
+                <div className="lg:col-span-4 flex flex-col items-center text-center">
+                  <div className="w-32 h-32 sm:w-36 sm:h-36 rounded-2xl flex items-center justify-center text-white text-5xl sm:text-6xl font-black bg-gradient-to-br from-[#007BFF] to-[#06B6D4] shadow-xl shadow-blue-500/20 mb-6">
+                    {ceo.name.charAt(0).toUpperCase()}
+                  </div>
+                  <h4 className="text-2xl sm:text-3xl font-extrabold text-white tracking-tight">
+                    {ceo.name}
+                  </h4>
+                  <div className="text-sm font-bold text-[#06B6D4] mt-1.5 tracking-wider uppercase">
+                    {ceo.role}
+                  </div>
                 </div>
 
-                <h4 className="text-lg font-bold text-[#0F172A] group-hover:text-[#007BFF] transition-colors">
-                  {leader.name}
-                </h4>
-                <div className="text-xs font-semibold text-[#007BFF] mb-2 font-mono">
-                  {leader.role}
+                {/* Right: Bio + Quote */}
+                <div className="lg:col-span-8 space-y-6">
+                  <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 border border-white/15 text-[11px] font-bold text-blue-300 uppercase tracking-widest">
+                    Meet Our Founder
+                  </div>
+
+                  <p className="text-base sm:text-lg text-slate-300 leading-relaxed">
+                    {ceo.bio}
+                  </p>
+
+                  <blockquote className="border-l-4 border-[#007BFF] pl-5 py-2">
+                    <p className="text-lg sm:text-xl text-white font-medium italic leading-relaxed">
+                      "Technology should solve a problem, improve an experience, or create a new opportunity."
+                    </p>
+                  </blockquote>
+
+                  
                 </div>
-                <p className="text-xs text-slate-600 leading-relaxed">
-                  {leader.bio}
-                </p>
-              </motion.div>
-            ))}
-          </div>
-        </div>
+              </div>
+            </motion.div>
+          );
+        })()}
       </div>
     </section>
   );

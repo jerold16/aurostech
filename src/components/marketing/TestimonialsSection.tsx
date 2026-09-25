@@ -82,12 +82,9 @@ export const TestimonialsSection: React.FC = () => {
               </AnimatePresence>
 
               <div className="flex items-center gap-4">
-                <img
-                  src={current.avatar}
-                  alt={current.name}
-                  className="w-14 h-14 rounded-full object-cover border-2 border-slate-200 shadow-xs"
-                  referrerPolicy="no-referrer"
-                />
+                <div className="w-14 h-14 rounded-full flex items-center justify-center text-white text-xl font-extrabold shadow-xs flex-shrink-0 bg-gradient-to-br from-[#007BFF] to-[#06B6D4]">
+                  {current.name.charAt(0).toUpperCase()}
+                </div>
                 <div>
                   <div className="text-lg font-bold text-[#0F172A]">{current.name}</div>
                   <div className="text-sm font-medium text-slate-600">{current.role}</div>
@@ -174,12 +171,9 @@ export const TestimonialsSection: React.FC = () => {
               </div>
 
               <div className="flex items-center gap-3 pt-3 border-t border-slate-200/80">
-                <img
-                  src={t.avatar}
-                  alt={t.name}
-                  className="w-9 h-9 rounded-full object-cover border border-slate-200"
-                  referrerPolicy="no-referrer"
-                />
+                <div className="w-9 h-9 rounded-full flex items-center justify-center text-white text-sm font-extrabold flex-shrink-0 bg-gradient-to-br from-[#007BFF] to-[#06B6D4]">
+                  {t.name.charAt(0).toUpperCase()}
+                </div>
                 <div className="overflow-hidden">
                   <div className="text-xs font-bold text-[#0F172A] truncate">{t.name}</div>
                   <div className="text-[11px] text-slate-500 truncate">{t.company.split('(')[0]}</div>

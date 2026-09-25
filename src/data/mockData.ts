@@ -316,33 +316,9 @@ export const LEADERSHIP_TEAM = [
   {
     name: 'Arun Kumar Tula',
     role: 'Founder & CEO',
-    bio: 'Guiding AureosTech with a focus on practical software engineering, client-centric delivery, and meaningful business outcomes.',
+    bio: 'Guiding AureosTech with a focus on practical software engineering, client-centric delivery, and meaningful business outcomes. With a passion for building technology that solves real problems, Arun leads the company vision and strategy to help businesses grow through smart digital solutions.',
     avatar: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=400&auto=format&fit=crop&q=80',
-    initials: 'AK',
-    linkedin: '#'
-  },
-  {
-    name: 'Revanth Reddy',
-    role: 'CTO',
-    bio: 'Overseeing technology architecture, scalable cloud systems, and modern digital implementation across customer projects.',
-    avatar: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&auto=format&fit=crop&q=80',
-    initials: 'RR',
-    linkedin: '#'
-  },
-  {
-    name: 'Sowmya Reddy',
-    role: 'COO',
-    bio: 'Directing operations and client success, ensuring clear communication, transparent planning, and dependable delivery.',
-    avatar: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=400&auto=format&fit=crop&q=80',
-    initials: 'SR',
-    linkedin: '#'
-  },
-  {
-    name: 'Vikram Singh',
-    role: 'Head of Delivery',
-    bio: 'Managing agile delivery squads to ensure solutions are maintainable, high quality, and ready for long-term growth.',
-    avatar: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=400&auto=format&fit=crop&q=80',
-    initials: 'VS',
+    initials: 'AT',
     linkedin: '#'
   }
 ];
