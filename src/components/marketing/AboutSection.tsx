@@ -227,10 +227,16 @@ export const AboutSection: React.FC<AboutSectionProps> = ({ onLearnMore }) => {
               <div className="absolute bottom-0 left-0 w-64 h-64 bg-[#06B6D4]/10 rounded-full blur-[100px] pointer-events-none" />
 
               <div className="relative grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-center">
-                {/* Left: Avatar + Name block */}
-                <div className="lg:col-span-4 flex flex-col items-center text-center">
-                  <div className="w-32 h-32 sm:w-36 sm:h-36 rounded-2xl flex items-center justify-center text-white text-5xl sm:text-6xl font-black bg-gradient-to-br from-[#007BFF] to-[#06B6D4] shadow-xl shadow-blue-500/20 mb-6">
-                    {ceo.name.charAt(0).toUpperCase()}
+                {/* Left: CEO Photo + Name block */}
+                <div className="lg:col-span-5 flex flex-col items-center lg:items-start text-center lg:text-left">
+                  <div className="relative w-full max-w-sm sm:max-w-md rounded-2xl overflow-hidden shadow-2xl shadow-blue-900/40 border border-white/15 mb-6 group">
+                    <img
+                      src={ceo.avatar}
+                      alt={`${ceo.name} - ${ceo.role}`}
+                      className="w-full h-auto object-cover transition-transform duration-700 ease-out group-hover:scale-105"
+                      loading="lazy"
+                    />
+                    <div className="absolute inset-0 ring-1 ring-inset ring-white/20 rounded-2xl pointer-events-none" />
                   </div>
                   <h4 className="text-2xl sm:text-3xl font-extrabold text-white tracking-tight">
                     {ceo.name}
@@ -241,22 +247,20 @@ export const AboutSection: React.FC<AboutSectionProps> = ({ onLearnMore }) => {
                 </div>
 
                 {/* Right: Bio + Quote */}
-                <div className="lg:col-span-8 space-y-6">
-                  <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 border border-white/15 text-[11px] font-bold text-blue-300 uppercase tracking-widest">
-                    Meet Our Founder
+                <div className="lg:col-span-7 space-y-6">
+                  <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/10 border border-white/15 text-[11px] font-bold text-blue-300 uppercase tracking-widest">
+                    Meet Our Leadership
                   </div>
 
                   <p className="text-base sm:text-lg text-slate-300 leading-relaxed">
                     {ceo.bio}
                   </p>
 
-                  <blockquote className="border-l-4 border-[#007BFF] pl-5 py-2">
+                  <blockquote className="border-l-4 border-[#007BFF] pl-5 py-2 bg-white/[0.03] rounded-r-xl">
                     <p className="text-lg sm:text-xl text-white font-medium italic leading-relaxed">
                       "Technology should solve a problem, improve an experience, or create a new opportunity."
                     </p>
                   </blockquote>
-
-                  
                 </div>
               </div>
             </motion.div>

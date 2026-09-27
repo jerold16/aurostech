@@ -314,11 +314,11 @@ export const TRUSTED_BRANDS = [
 
 export const LEADERSHIP_TEAM = [
   {
-    name: 'Arun Kumar Tula',
-    role: 'Founder & CEO',
+    name: 'Tula Arun Kumar',
+    role: 'CEO & Founder',
     bio: 'Guiding AureosTech with a focus on practical software engineering, client-centric delivery, and meaningful business outcomes. With a passion for building technology that solves real problems, Arun leads the company vision and strategy to help businesses grow through smart digital solutions.',
-    avatar: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=400&auto=format&fit=crop&q=80',
-    initials: 'AT',
+    avatar: '/ceo-arun-kumar.jpg',
+    initials: 'TK',
     linkedin: '#'
   }
 ];
