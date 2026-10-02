@@ -230,15 +230,15 @@ export const AboutSection: React.FC<AboutSectionProps> = ({ onLearnMore }) => {
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
               {LEADERSHIP_TEAM.map((member) => (
                 <div key={member.name} className="bg-white/5 border border-white/10 rounded-2xl p-5 flex flex-col h-full">
-                  <div className="relative rounded-xl overflow-hidden mb-4">
-                    <img
-                      src={member.avatar}
-                      alt={`${member.name} - ${member.role}`}
-                      className="w-full h-44 object-cover transition-transform duration-500 ease-out hover:scale-105"
-                      loading="lazy"
-                    />
-                    <div className="absolute inset-0 ring-1 ring-inset ring-white/10 rounded-xl pointer-events-none" />
-                  </div>
+                      <div className="relative rounded-xl overflow-hidden mb-4 bg-slate-800 p-4 flex items-center justify-center">
+                        <img
+                          src={member.avatar}
+                          alt={`${member.name} - ${member.role}`}
+                          className="max-h-36 max-w-full object-contain rounded-md transition-transform duration-500 ease-out hover:scale-105"
+                          loading="lazy"
+                        />
+                        <div className="absolute inset-0 ring-1 ring-inset ring-white/10 rounded-xl pointer-events-none" />
+                      </div>
                   <h4 className="text-lg font-extrabold text-white mb-1">{member.name}</h4>
                   <div className="text-xs font-bold text-[#06B6D4] uppercase tracking-wider mb-2">{member.role}</div>
                   <p className="text-sm text-slate-200 leading-relaxed flex-1">{member.bio}</p>

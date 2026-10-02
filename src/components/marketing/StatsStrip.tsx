@@ -8,53 +8,101 @@ export const StatsStrip: React.FC = () => {
     switch (name) {
       case 'CheckCircle2':
         return <CheckCircle2 className="w-6 h-6 text-[#007BFF]" />;
+
       case 'ThumbsUp':
-        return <ThumbsUp className="w-6 h-6 text-[#06B6D4]" />;
+        return <ThumbsUp className="w-6 h-6 text-[#8B5CF6]" />;
+
       case 'Users':
-        return <Users className="w-6 h-6 text-[#8B5CF6]" />;
+        return <Users className="w-6 h-6 text-[#06B6D4]" />;
+
       case 'Award':
-        return <Award className="w-6 h-6 text-[#F59E0B]" />;
+        return <Award className="w-6 h-6 text-[#007BFF]" />;
+
       default:
         return <CheckCircle2 className="w-6 h-6 text-[#007BFF]" />;
     }
   };
 
+  const getIconBackground = (name: string) => {
+    switch (name) {
+      case 'CheckCircle2':
+        return 'bg-blue-50/80 border-blue-100';
+
+      case 'ThumbsUp':
+        return 'bg-purple-50/80 border-purple-100';
+
+      case 'Users':
+        return 'bg-cyan-50/80 border-cyan-100';
+
+      case 'Award':
+        return 'bg-blue-50/80 border-blue-100';
+
+      default:
+        return 'bg-blue-50/80 border-blue-100';
+    }
+  };
+
   return (
-    <section className="relative z-20 py-10 bg-[#F8FAFC] border-y border-slate-200">
+    <section
+      className=" relative z-20 py-6
+        sm:py-7 bg-white  border-slate-100">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+
+        <div
+          className=" grid grid-cols-1 sm:grid-cols-2
+            lg:grid-cols-4">
           {METRICS.map((metric, idx) => (
-            <motion.div
-              key={metric.id}
-              initial={{ opacity: 0, y: 35 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, amount: 0.15 }}
-              transition={{
-                duration: 0.55,
-                delay: idx * 0.1,
-                ease: [0.21, 0.47, 0.32, 0.98]
-              }}
-              className="flex items-center gap-4 p-4 rounded-xl bg-white border border-slate-200/80 shadow-xs hover:border-[#007BFF]/50 hover:shadow-md transition-all"
-            >
-              <div className="w-12 h-12 rounded-xl bg-slate-50 border border-slate-200 flex items-center justify-center flex-shrink-0">
-                {getIcon(metric.iconName)}
-              </div>
-              <div>
-                <div className="text-2xl sm:text-3xl font-extrabold text-[#0F172A] tracking-tight">
-                  {metric.value}
+            <motion.div key={metric.id}
+              initial={{ opacity: 0, y: 20,}}
+              whileInView={{opacity: 1,y: 0,}}
+              viewport={{once: true,amount: 0.2,}}
+              transition={{duration: 0.55,delay: idx * 0.08,ease: [0.21, 0.47, 0.32, 0.98],}}
+              className={`relative flex items-center gap-4
+                px-5 lg:px-6 py-5 group
+            
+              `}>
+              {/* Icon  
+                  ${idx !== 0 ? 'lg:border-l lg:border-slate-200' : ''}
+                ${idx === 2? 'sm:border-l sm:border-slate-200': ''}
+                ${idx === 1  ? 'sm:border-l sm:border-slate-200 lg:border-l-0': ''}
+              */}
+              <div
+                className={` relative flex-shrink-0
+                  w-14 h-14 rounded-full
+                  ${getIconBackground(metric.iconName)} flex items-center justify-center
+                  transition-transform duration-300 group-hover:scale-105`}>
+
+                {/* Soft glow */}
+                <div className=" absolute inset-1 rounded-full
+                    bg-white/50 blur-md"/>
+                <div className="relative z-10">
+                  {getIcon(metric.iconName)}
                 </div>
-                <div className="text-sm font-bold text-slate-700 mt-0.5">
+
+              </div>
+
+              {/* Content */}
+              <div className="min-w-0">
+
+                <div
+                  className=" text-[15px] sm:text-base font-bold text-[#0F172A]
+                    tracking-tight leading-tight">
                   {metric.label}
                 </div>
+
                 {metric.subtext && (
-                  <div className="text-xs text-slate-500 mt-0.5 hidden sm:block">
+                  <div
+                    className=" text-xs sm:text-[13px]
+                      text-slate-500 mt-1 leading-relaxed">
                     {metric.subtext}
                   </div>
                 )}
               </div>
+
             </motion.div>
           ))}
         </div>
+
       </div>
     </section>
   );

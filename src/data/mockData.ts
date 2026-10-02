@@ -109,7 +109,7 @@ export const SERVICES: ServiceItem[] = [
     iconName: 'Globe',
     capabilities: [
       'Corporate Websites & Portals',
-      'Modern Dashboards',
+      'Modern Admin Dashboards',
       'Customer Web Platforms',
       'Performance & Usability'
     ],
@@ -326,14 +326,6 @@ export const LEADERSHIP_TEAM = [
 // Additional leadership members provided by client
 LEADERSHIP_TEAM.push(
   {
-    name: 'Puja',
-    role: 'Chief Information Officer (CIO)',
-    bio: 'Oversees technology strategy, platforms and information systems.',
-    avatar: '/Puja-CIO.jpeg',
-    initials: 'P',
-    linkedin: '#'
-  },
-  {
     name: 'Mohan Reddy',
     role: 'Chief Financial Officer (CFO)',
     bio: 'Responsible for financial planning, risk management and reporting.',
@@ -341,6 +333,15 @@ LEADERSHIP_TEAM.push(
     initials: 'MR',
     linkedin: '#'
   },
+  {
+    name: 'Puja',
+    role: 'Chief Information Officer (CIO)',
+    bio: 'Oversees technology strategy, platforms and information systems.',
+    avatar: '/Puja-CIO.jpeg',
+    initials: 'P',
+    linkedin: '#'
+  },
+  
   {
     name: 'Prathya Sharma',
     role: 'Head of Human Resources',
