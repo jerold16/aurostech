@@ -30,6 +30,7 @@ export const Navbar: React.FC<NavbarProps> = ({
     { label: 'Home', id: 'hero' },
     { label: 'About', id: 'about' },
     { label: 'Services', id: 'services' },
+    // { label: 'Brand', id: 'brand' },
     { label: 'Solutions', id: 'solutions' },
     { label: 'SaaS Platform', id: 'technologies' },
     { label: 'Testimonials', id: 'testimonials' },
@@ -74,15 +75,18 @@ export const Navbar: React.FC<NavbarProps> = ({
               <button
                 key={item.id}
                 onClick={() => handleLinkClick(item.id)}
-                className={`relative px-3.5 py-2 text-sm font-medium transition-colors rounded-lg cursor-pointer ${
+                className={`relative px-3.5 py-2 text-sm font-medium transition-colors rounded-lg cursor-pointer overflow-visible ${
                   isActive
                     ? 'text-[#007BFF] font-semibold'
                     : 'text-slate-600 hover:text-[#0F172A] hover:bg-slate-100'
                 }`}
               >
-                {item.label}
                 {isActive && (
-                  <span className="absolute bottom-0 left-3.5 right-3.5 h-0.5 brand-gradient rounded-full" />
+                  <span className="absolute inset-0 rounded-lg -z-10 transform-gpu blur-[10px] bg-gradient-to-r from-[#007BFF]/20 via-[#06B6D4]/10 to-transparent" />
+                )}
+                <span className="relative z-10">{item.label}</span>
+                {isActive && (
+                  <span className="absolute bottom-0 left-3.5 right-3.5 h-0.5 brand-gradient rounded-full z-10" />
                 )}
               </button>
             );
@@ -129,11 +133,16 @@ export const Navbar: React.FC<NavbarProps> = ({
             <button
               key={item.id}
               onClick={() => handleLinkClick(item.id)}
-              className="w-full text-left px-4 py-2.5 rounded-lg text-sm font-medium text-slate-700 hover:text-[#0F172A] hover:bg-slate-100 flex items-center justify-between cursor-pointer"
+              className={`w-full text-left px-4 py-2.5 rounded-lg text-sm font-medium text-slate-700 hover:text-[#0F172A] hover:bg-slate-100 flex items-center justify-between cursor-pointer relative overflow-visible ${
+                activeSection === item.id ? 'font-semibold' : ''
+              }`}
             >
-              <span>{item.label}</span>
               {activeSection === item.id && (
-                <span className="w-2 h-2 rounded-full bg-[#007BFF]" />
+                <span className="absolute inset-0 rounded-lg -z-10 transform-gpu blur-[10px] bg-[#007BFF]/10" />
+              )}
+              <span className="relative z-10">{item.label}</span>
+              {activeSection === item.id && (
+                <span className="w-2 h-2 rounded-full bg-[#007BFF] ml-3 relative z-10" />
               )}
             </button>
           ))}

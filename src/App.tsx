@@ -10,6 +10,7 @@ import { StatsStrip } from './components/marketing/StatsStrip';
 import { ClientStrip } from './components/marketing/ClientStrip';
 import { ServicesSection } from './components/marketing/ServicesSection';
 import { IndustrySection } from './components/marketing/IndustrySection';
+import { BrandSection } from './components/marketing/BrandSection';
 import { SaasPlatformShowcase } from './components/saas/SaasPlatformShowcase';
 import { AboutSection } from './components/marketing/AboutSection';
 import { TestimonialsSection } from './components/marketing/TestimonialsSection';
@@ -71,7 +72,7 @@ export default function App() {
         <StatsStrip />
 
         {/* 3. Trusted Enterprise Partners */}
-        <ClientStrip />
+        {/* <ClientStrip /> */}
 
         {/* 4. Core Services Grid */}
         <ServicesSection
@@ -86,6 +87,9 @@ export default function App() {
         <IndustrySection
           onContactIndustry={(indTitle) => handleOpenContactWithService(indTitle)}
         />
+
+          {/* 6. Brand / Logos Section */}
+          {/* <BrandSection /> */}
 
         {/* 6. Complete Interactive SaaS Product Platform Showcase */}
         <SaasPlatformShowcase

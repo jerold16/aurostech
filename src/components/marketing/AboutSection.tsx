@@ -211,61 +211,42 @@ export const AboutSection: React.FC<AboutSectionProps> = ({ onLearnMore }) => {
           </div>
         </div>
 
-        {/* Founder Section — Editorial Style */}
-        {(() => {
-          const ceo = LEADERSHIP_TEAM[0];
-          return (
-            <motion.div
-              initial={{ opacity: 0, y: 40 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.7, ease: [0.21, 0.47, 0.32, 0.98] }}
-              className="relative rounded-3xl overflow-hidden bg-gradient-to-br from-[#0B192C] via-[#0F2440] to-[#0B192C] p-8 sm:p-12 lg:p-16"
-            >
-              {/* Ambient glow */}
-              <div className="absolute top-0 right-0 w-80 h-80 bg-[#007BFF]/15 rounded-full blur-[120px] pointer-events-none" />
-              <div className="absolute bottom-0 left-0 w-64 h-64 bg-[#06B6D4]/10 rounded-full blur-[100px] pointer-events-none" />
+        {/* Leadership Team Grid */}
+        <motion.div
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.7, ease: [0.21, 0.47, 0.32, 0.98] }}
+          className="relative rounded-3xl overflow-hidden bg-gradient-to-br from-[#0B192C] via-[#0F2440] to-[#0B192C] p-8 sm:p-12 lg:p-16"
+        >
+          <div className="absolute top-0 right-0 w-80 h-80 bg-[#007BFF]/15 rounded-full blur-[120px] pointer-events-none" />
+          <div className="absolute bottom-0 left-0 w-64 h-64 bg-[#06B6D4]/10 rounded-full blur-[100px] pointer-events-none" />
 
-              <div className="relative grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-center">
-                {/* Left: CEO Photo + Name block */}
-                <div className="lg:col-span-5 flex flex-col items-center lg:items-start text-center lg:text-left">
-                  <div className="relative w-full max-w-sm sm:max-w-md rounded-2xl overflow-hidden shadow-2xl shadow-blue-900/40 border border-white/15 mb-6 group">
+          <div className="relative">
+            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/10 border border-white/15 text-[11px] font-bold text-blue-300 uppercase tracking-widest mb-6">
+              Meet Our Leadership
+            </div>
+
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+              {LEADERSHIP_TEAM.map((member) => (
+                <div key={member.name} className="bg-white/5 border border-white/10 rounded-2xl p-5 flex flex-col h-full">
+                  <div className="relative rounded-xl overflow-hidden mb-4">
                     <img
-                      src={ceo.avatar}
-                      alt={`${ceo.name} - ${ceo.role}`}
-                      className="w-full h-auto object-cover transition-transform duration-700 ease-out group-hover:scale-105"
+                      src={member.avatar}
+                      alt={`${member.name} - ${member.role}`}
+                      className="w-full h-44 object-cover transition-transform duration-500 ease-out hover:scale-105"
                       loading="lazy"
                     />
-                    <div className="absolute inset-0 ring-1 ring-inset ring-white/20 rounded-2xl pointer-events-none" />
+                    <div className="absolute inset-0 ring-1 ring-inset ring-white/10 rounded-xl pointer-events-none" />
                   </div>
-                  <h4 className="text-2xl sm:text-3xl font-extrabold text-white tracking-tight">
-                    {ceo.name}
-                  </h4>
-                  <div className="text-sm font-bold text-[#06B6D4] mt-1.5 tracking-wider uppercase">
-                    {ceo.role}
-                  </div>
+                  <h4 className="text-lg font-extrabold text-white mb-1">{member.name}</h4>
+                  <div className="text-xs font-bold text-[#06B6D4] uppercase tracking-wider mb-2">{member.role}</div>
+                  <p className="text-sm text-slate-200 leading-relaxed flex-1">{member.bio}</p>
                 </div>
-
-                {/* Right: Bio + Quote */}
-                <div className="lg:col-span-7 space-y-6">
-                  <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/10 border border-white/15 text-[11px] font-bold text-blue-300 uppercase tracking-widest">
-                    Meet Our Leadership
-                  </div>
-
-                  <p className="text-base sm:text-lg text-slate-300 leading-relaxed">
-                    {ceo.bio}
-                  </p>
-
-                  <blockquote className="border-l-4 border-[#007BFF] pl-5 py-2 bg-white/[0.03] rounded-r-xl">
-                    <p className="text-lg sm:text-xl text-white font-medium italic leading-relaxed">
-                      "Technology should solve a problem, improve an experience, or create a new opportunity."
-                    </p>
-                  </blockquote>
-                </div>
-              </div>
-            </motion.div>
-          );
-        })()}
+              ))}
+            </div>
+          </div>
+        </motion.div>
       </div>
     </section>
   );

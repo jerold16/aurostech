@@ -314,14 +314,42 @@ export const TRUSTED_BRANDS = [
 
 export const LEADERSHIP_TEAM = [
   {
-    name: 'Tula Arun Kumar',
-    role: 'CEO & Founder',
-    bio: 'Guiding AureosTech with a focus on practical software engineering, client-centric delivery, and meaningful business outcomes. With a passion for building technology that solves real problems, Arun leads the company vision and strategy to help businesses grow through smart digital solutions.',
+    name: 'Arun Kumar',
+    role: 'Founder & MD',
+    bio: 'Guiding AureosTech with a focus on practical software engineering, client-centric delivery, and meaningful business outcomes.',
     avatar: '/ceo-arun-kumar.jpg',
-    initials: 'TK',
+    initials: 'AK',
     linkedin: '#'
   }
 ];
+
+// Additional leadership members provided by client
+LEADERSHIP_TEAM.push(
+  {
+    name: 'Puja',
+    role: 'Chief Information Officer (CIO)',
+    bio: 'Oversees technology strategy, platforms and information systems.',
+    avatar: '/Puja-CIO.jpeg',
+    initials: 'P',
+    linkedin: '#'
+  },
+  {
+    name: 'Mohan Reddy',
+    role: 'Chief Financial Officer (CFO)',
+    bio: 'Responsible for financial planning, risk management and reporting.',
+    avatar: '/Mohan-Reddy-CFO.jpeg',
+    initials: 'MR',
+    linkedin: '#'
+  },
+  {
+    name: 'Prathya Sharma',
+    role: 'Head of Human Resources',
+    bio: 'Leads talent, culture and organizational development.',
+    avatar: '/Prathysha-sharma.jpeg',
+    initials: 'PS',
+    linkedin: '#'
+  }
+);
 
 export const TESTIMONIALS: TestimonialItem[] = [
   {
@@ -552,6 +580,43 @@ export const TEAM_MEMBERS: TeamMember[] = [
     avatar: 'https://images.unsplash.com/photo-1522075469751-3a6694fb2f61?w=120&auto=format&fit=crop&q=80',
     status: 'online',
     activeProjects: 3
+  }
+  ,
+  {
+    id: 'tm-7',
+    name: 'Arun Kumar',
+    role: 'Founder & MD',
+    department: 'Executive',
+    avatar: '/team/arun-kumar.jpg',
+    status: 'online',
+    activeProjects: 0
+  },
+  {
+    id: 'tm-8',
+    name: 'Puja',
+    role: 'Chief Information Officer (CIO)',
+    department: 'Technology',
+    avatar: '/team/puja.jpg',
+    status: 'online',
+    activeProjects: 0
+  },
+  {
+    id: 'tm-9',
+    name: 'Mohan Reddy',
+    role: 'Chief Financial Officer (CFO)',
+    department: 'Finance',
+    avatar: '/team/mohan-reddy.jpg',
+    status: 'offline',
+    activeProjects: 0
+  },
+  {
+    id: 'tm-10',
+    name: 'Prathya Sharma',
+    role: 'Head of Human Resources',
+    department: 'People & Culture',
+    avatar: '/team/prathya-sharma.jpg',
+    status: 'online',
+    activeProjects: 0
   }
 ];
 
