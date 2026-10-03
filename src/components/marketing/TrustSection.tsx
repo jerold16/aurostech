@@ -25,7 +25,7 @@ export const TrustSection: React.FC = () => {
   };
 
   return (
-    <section id="trust" className="py-24 bg-white border-t border-slate-200">
+    <section id="trust" className="py-24 bg-[#FBFDFF] border-t border-slate-200">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 35 }}
@@ -45,7 +45,7 @@ export const TrustSection: React.FC = () => {
           </h2>
           <AnimatedParagraph
             text="Our approach combines software development, modern technologies and business understanding to make digital solutions practical, reliable, and outcome-focused."
-            className="mt-3 text-base text-slate-600 max-w-2xl mx-auto"
+            className="mt-4 text-lg sm:text-xl text-slate-600 max-w-2xl mx-auto"
             delay={0.25}
             wordDelay={0.02}
           />
@@ -56,29 +56,24 @@ export const TrustSection: React.FC = () => {
           {TRUST_ITEMS.map((item, idx) => (
             <motion.div
               key={item.id}
-              initial={{ opacity: 0, y: 35 }}
+              initial={{ opacity: 0, y: 18 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.15 }}
-              transition={{
-                duration: 0.55,
-                delay: 0.08 + idx * 0.08,
-                ease: [0.21, 0.47, 0.32, 0.98]
-              }}
-              className="bg-[#F8FAFC] border border-slate-200 hover:border-[#007BFF]/50 hover:bg-white rounded-2xl p-6 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg flex flex-col justify-between"
+              transition={{ duration: 0.5, delay: 0.05 + idx * 0.05 }}
+              className="relative bg-white rounded-2xl p-6 border border-slate-100 shadow-sm hover:shadow-md transition-transform duration-250 hover:-translate-y-1"
             >
-              <div>
-                <div className="w-12 h-12 rounded-xl bg-white border border-slate-200 shadow-xs flex items-center justify-center mb-5">
-                  {getIcon(item.iconName)}
+              <div className="absolute left-0 top-0 bottom-0 w-1 rounded-l-2xl bg-gradient-to-b from-[#007BFF] to-[#8B5CF6]" />
+
+              <div className="pl-4">
+                <div className="flex items-start gap-4">
+                  <div className="w-12 h-12 rounded-lg bg-[#F8FAFF] border border-slate-100 flex items-center justify-center text-[#007BFF]">
+                    {getIcon(item.iconName)}
+                  </div>
+                  <div className="flex-1">
+                    <h3 className="text-lg font-extrabold text-[#0F172A] mb-1">{item.title}</h3>
+                    <p className="text-sm text-slate-600">{item.description}</p>
+                  </div>
                 </div>
-                <h3 className="text-lg font-bold text-[#0F172A] mb-2">
-                  {item.title}
-                </h3>
-                <p className="text-sm text-slate-600 leading-relaxed">
-                  {item.description}
-                </p>
-              </div>
-              <div className="mt-6 pt-4 border-t border-slate-200 text-[11px] font-mono font-semibold text-[#007BFF]">
-                // CORE PRINCIPLE
               </div>
             </motion.div>
           ))}

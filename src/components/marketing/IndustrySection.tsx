@@ -104,94 +104,90 @@ export const IndustrySection: React.FC<IndustrySectionProps> = ({
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.2 }}
           transition={{ duration: 0.7, delay: 0.35, ease: [0.21, 0.47, 0.32, 0.98] }}
-          className="bg-[#F8FAFC] border border-slate-200 rounded-3xl p-6 sm:p-10 shadow-sm relative overflow-hidden"
+          className="bg-white border border-slate-200 rounded-3xl p-6 sm:p-10 shadow-lg relative overflow-hidden"
         >
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
             {/* Left Content Column (7 cols) */}
             <div className="lg:col-span-7">
-              <div className="flex items-center gap-3 mb-4">
-                <div className="w-10 h-10 rounded-xl bg-white border border-slate-200 flex items-center justify-center shadow-xs">
+              <div className="flex items-start gap-4 mb-6">
+                <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-[#E6F0FF] to-[#F0F7FF] border border-slate-100 flex items-center justify-center shadow-sm">
                   {getIcon(selectedIndustry.iconName)}
                 </div>
-                <div>
-                  <h3 className="text-2xl sm:text-3xl font-bold text-[#0F172A] tracking-tight">
+                <div className="flex-1">
+                  <h3 className="text-3xl sm:text-4xl font-extrabold text-[#0F172A] tracking-tight leading-tight">
                     {selectedIndustry.title}
                   </h3>
-                  <span className="text-xs font-semibold text-[#007BFF]">
+                  <div className="text-sm font-semibold text-[#007BFF] mt-2">
                     {selectedIndustry.tagline}
-                  </span>
+                  </div>
                 </div>
               </div>
 
-              <p className="text-base text-slate-600 leading-relaxed mb-6">
+              <p className="text-lg text-slate-700 leading-relaxed mb-6">
                 {selectedIndustry.description}
               </p>
 
-              {/* Core capabilities list */}
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-8">
+              {/* Core capabilities list as pill chips */}
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8">
                 {selectedIndustry.features.map((feat, idx) => (
-                   <motion.div
-                     key={`${selectedIndustry.id}-feat-${idx}`}
-                     initial={{ opacity: 0, y: 25 }}
-                     animate={{ opacity: 1, y: 0 }}
-                     transition={{
-                       duration: 0.45,
-                       delay: idx * 0.08,
-                       ease: [0.21, 0.47, 0.32, 0.98]
-                     }}
-                     className="flex items-center gap-2.5 text-sm font-medium text-slate-800 bg-white p-3 rounded-xl border border-slate-200 shadow-xs hover:border-[#007BFF]/50 transition-colors"
-                   >
-                     <CheckCircle2 className="w-4 h-4 text-[#007BFF] flex-shrink-0" />
-                     <span>{feat}</span>
-                   </motion.div>
-                ))}
-              </div>
-
-              {/* CTA */}
-              <div className="flex flex-wrap items-center gap-4">
-                <Button
-                  size="md"
-                  withArrow
-                  onClick={() => onContactIndustry(selectedIndustry.title)}
-                >
-                  Consult with {selectedIndustry.title.split(' ')[0]} Lead
-                </Button>
-              </div>
-            </div>
-
-            {/* Right Metrics & Topology Column (5 cols) */}
-            <div className="lg:col-span-5 bg-white border border-slate-200 rounded-2xl p-6 flex flex-col justify-between shadow-xs">
-              <div className="flex items-center justify-between pb-4 mb-4 border-b border-slate-200">
-                <span className="text-xs font-mono font-bold text-slate-500 uppercase">DOMAIN METRICS & COMPLIANCE</span>
-                <span className="text-[11px] font-mono font-semibold px-2 py-0.5 rounded-full bg-emerald-50 text-emerald-700 border border-emerald-200">
-                  VERIFIED
-                </span>
-              </div>
-
-              <div className="space-y-3.5 mb-6">
-                {selectedIndustry.metrics.map((m, idx) => (
                   <motion.div
-                    key={`${selectedIndustry.id}-metric-${idx}`}
+                    key={`${selectedIndustry.id}-feat-${idx}`}
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
-                    transition={{
-                      duration: 0.4,
-                      delay: 0.1 + idx * 0.08,
-                      ease: [0.21, 0.47, 0.32, 0.98]
-                    }}
-                    className="p-3.5 rounded-xl bg-slate-50 border border-slate-200 flex items-center justify-between"
+                    transition={{ duration: 0.45, delay: idx * 0.06 }}
+                    className="flex items-center gap-3 text-sm font-medium text-slate-800 bg-white rounded-full px-4 py-3 border border-slate-100 shadow-sm"
                   >
-                    <span className="text-sm font-semibold text-slate-700">{m.label}</span>
-                    <span className="text-lg font-extrabold text-[#007BFF] font-mono">
-                      {m.value}
-                    </span>
+                    <div className="w-6 h-6 rounded-full bg-[#EFF8FF] flex items-center justify-center text-[#007BFF]">
+                      <CheckCircle2 className="w-3.5 h-3.5" />
+                    </div>
+                    <span>{feat}</span>
                   </motion.div>
                 ))}
               </div>
 
-              <div className="p-3.5 rounded-xl bg-blue-50/60 border border-blue-200/70 text-xs font-medium text-slate-700 flex items-center gap-3">
-                <div className="w-2 h-2 rounded-full bg-emerald-500 flex-shrink-0 animate-pulse" />
-                <span>Audited for international privacy standards & low-latency execution.</span>
+              {/* CTA */}
+              <div className="flex flex-wrap items-center gap-4 mt-2">
+                <button
+                  onClick={() => onContactIndustry(selectedIndustry.title)}
+                  className="inline-flex items-center gap-3 px-6 py-3 rounded-full text-white text-base font-semibold bg-gradient-to-r from-[#007BFF] to-[#8B5CF6] shadow-[0_10px_30px_rgba(99,102,241,0.15)]"
+                >
+                  <span>Consult with {selectedIndustry.title.split(' ')[0]} Lead</span>
+                  <ArrowRight className="w-4 h-4 opacity-90" />
+                </button>
+              </div>
+            </div>
+
+            {/* Right Metrics & Topology Column (5 cols) */}
+            <div className="lg:col-span-5 p-6">
+              <div className="bg-white border border-slate-200 rounded-2xl p-5 h-full flex flex-col justify-between shadow-sm">
+                <div className="flex items-center justify-between pb-4 mb-4 border-b border-slate-100">
+                  <span className="text-xs font-mono font-bold text-slate-500 uppercase">DOMAIN METRICS & COMPLIANCE</span>
+                  <span className="text-[11px] font-mono font-semibold px-2 py-0.5 rounded-full bg-emerald-50 text-emerald-700 border border-emerald-200">
+                    VERIFIED
+                  </span>
+                </div>
+
+                <div className="space-y-4 mb-6">
+                  {selectedIndustry.metrics.map((m, idx) => (
+                    <motion.div
+                      key={`${selectedIndustry.id}-metric-${idx}`}
+                      initial={{ opacity: 0, y: 12 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      transition={{ duration: 0.36, delay: 0.08 + idx * 0.06 }}
+                      className="p-4 rounded-xl bg-white border border-slate-100 flex items-center justify-between shadow-sm"
+                    >
+                      <span className="text-sm font-semibold text-slate-700">{m.label}</span>
+                      <span className="text-xl font-extrabold text-[#007BFF] font-mono">
+                        {m.value}
+                      </span>
+                    </motion.div>
+                  ))}
+                </div>
+
+                <div className="p-3.5 rounded-xl bg-gradient-to-r from-emerald-50 to-white border border-emerald-100 text-xs font-medium text-slate-700 flex items-center gap-3">
+                  <div className="w-2 h-2 rounded-full bg-emerald-500 flex-shrink-0 animate-pulse" />
+                  <span>Audited for international privacy standards & low-latency execution.</span>
+                </div>
               </div>
             </div>
           </div>
