@@ -334,7 +334,7 @@ LEADERSHIP_TEAM.push(
     linkedin: '#'
   },
   {
-    name: 'Puja',
+    name: 'Pujitha J',
     role: 'Chief Information Officer (CIO)',
     bio: 'Oversees technology strategy, platforms and information systems.',
     avatar: '/Puja-CIO.jpeg',
@@ -343,7 +343,7 @@ LEADERSHIP_TEAM.push(
   },
   
   {
-    name: 'Prathya Sharma',
+    name: 'Prathyusha Sharma',
     role: 'Head of Human Resources',
     bio: 'Leads talent, culture and organizational development.',
     avatar: '/Prathysha-sharma.jpeg',
